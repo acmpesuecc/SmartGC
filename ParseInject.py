@@ -1,7 +1,7 @@
 import sys
 import json
 
-import parser 
+import parser_1
 
 
 def inject_deallocation_code(input_file, output_file, json_file):
@@ -38,5 +38,5 @@ if __name__ == "__main__":
     output_file = sys.argv[2]
     json_file = sys.argv[3]
 
-    parser.main(input_file, json_file)
+    parser_1.main(input_file, json_file)
     inject_deallocation_code(input_file, output_file, json_file)

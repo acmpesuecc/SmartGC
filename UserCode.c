@@ -1,32 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int fibonacci(int n) {
-
-    if (n <= 1) {
-        return n;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+int *myFunc()
+{
+    int *x = malloc(sizeof(int)); // Allocate memory for an int
+    *x = 15;                      // Assign a value to the allocated memory
+    return x;                     // Return the pointer to the allocated memory
 }
 
-int main() {
-    int random = 5;
-    int num = 10;
-    int *n = (int *)malloc(sizeof(int));
-    int *x = (int *)malloc(sizeof(int));
-    
-    *x = random;
-    *n = num;
-
-    printf("Fibonacci sequence up to %d:\n", *n);
-    for (int i = 0; i < *n; i++) {
-        printf("%d\n", fibonacci(i));
-	printf("----\n");
-    }
-
-
-
-    printf("\n");
-    return 0;
+int main()
+{
+    int *valOfx = myFunc();  // Call myFunc to get the allocated memory
+    printf("%d\n", *valOfx); // Print the value stored in the allocated memory
+    return 0;                // Return from main
 }
